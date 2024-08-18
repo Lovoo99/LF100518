@@ -1,74 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de unidades de temperatura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Conversor de unidades de temperatura</h1>
+    <form id="formulario">
+        <label for="temperatura">Ingrese la temperatura:</label>
+        <input type="number" id="temperatura" name="temperatura">
+        <select id="unidad" name="unidad">
+            <option value="celcius">Grados Celcius</option>
+            <option value="farenheitt">Grados Farenheitt</option>
+            <option value="kelvin">Grados Kelvin</option>
+        </select>
+        <button id="convertir">Convertir</button>
+    </form>
+    <div id="resultado"></div>
 
-
-namespace ConversorTemperatura
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Conversor de unidades de temperatura");
-            Console.WriteLine("1. Convertir de Celsius a Fahrenheit o Kelvin");
-            Console.WriteLine("2. Convertir de Fahrenheit a Celsius o Kelvin");
-            Console.WriteLine("3. Convertir de Kelvin a Celsius o Fahrenheit");
-            Console.Write("Ingrese la opción deseada: ");
-            int opcion = Convert.ToInt32(Console.ReadLine());
-
-            switch (opcion)
-            {
-                case 1:
-                    Console.Write("Ingrese la temperatura en Celsius: ");
-                    double celsius = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Fahrenheit: " + ConvertirCelsiusAFahrenheit(celsius));
-                    Console.WriteLine("Kelvin: " + ConvertirCelsiusAKelvin(celsius));
-                    break;
-                case 2:
-                    Console.Write("Ingrese la temperatura en Fahrenheit: ");
-                    double fahrenheit = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Celsius: " + ConvertirFahrenheitACelsius(fahrenheit));
-                    Console.WriteLine("Kelvin: " + ConvertirFahrenheitAKelvin(fahrenheit));
-                    break;
-                case 3:
-                    Console.Write("Ingrese la temperatura en Kelvin: ");
-                    double kelvin = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Celsius: " + ConvertirKelvinACelsius(kelvin));
-                    Console.WriteLine("Fahrenheit: " + ConvertirKelvinAFahrenheit(kelvin));
-                    break;
-                default:
-                    Console.WriteLine("Opción inválida");
-                    break;
-            }
-
-            Console.ReadLine();
-        }
-
-        static double ConvertirCelsiusAFahrenheit(double celsius)
-        {
-            return (celsius * 9 / 5) + 32;
-        }
-
-        static double ConvertirCelsiusAKelvin(double celsius)
-        {
-            return celsius + 273.15;
-        }
-
-        static double ConvertirFahrenheitACelsius(double fahrenheit)
-        {
-            return (fahrenheit - 32) * 5 / 9;
-        }
-
-        static double ConvertirFahrenheitAKelvin(double fahrenheit)
-        {
-            return (fahrenheit - 32) * 5 / 9 + 273.15;
-        }
-
-        static double ConvertirKelvinACelsius(double kelvin)
-        {
-            return kelvin - 273.15;
-        }
-
-        static double ConvertirKelvinAFahrenheit(double kelvin)
-        {
-            return (kelvin - 273.15) * 9 / 5 + 32;
-        }
-    }
-}
+    <script src="script.js"></script>
+</body>
+</html>
